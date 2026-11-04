@@ -1,0 +1,3 @@
+import { sqliteTable, text, integer } from "drizzle-orm/sqlite-core";
+export const expenses = sqliteTable("expenses", { id:text("id").primaryKey(), description:text("description").notNull(), amount:integer("amount").notNull(), person:text("person").notNull(), method:text("method").notNull(), category:text("category").notNull(), date:text("date").notNull(), city:text("city").notNull(), shared:integer("shared",{mode:"boolean"}).notNull() });
+export const settings=sqliteTable("settings",{ id:integer("id").primaryKey(), first:text("first").notNull(), second:text("second").notNull(), budget:integer("budget").notNull() });
